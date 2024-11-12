@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- Container หลักที่เต็มพื้นที่ -->
+  <div class="bg-white w-full h-full flex flex-col">
+
+    <!-- ใช้ Flexbox สำหรับจัดหัวข้อและปุ่มที่ด้านบน -->
+    <div class="flex justify-between items-center p-6 bg-blue-500 text-white">
+      <h1 class="text-2xl font-bold">Todolist</h1>
+      <button id="add-todo-btn" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">
+        +
+      </button>
+    </div>
+
+    <!-- ฟอร์ม Add Task ที่จะซ่อนแสดงเมื่อกดปุ่ม "+" -->
+    <div id="new-task-form" class="hidden p-4 bg-gray-200">
+      <form id="todo-form" class="flex gap-2">
+        <input
+          type="text"
+          id="todo-input"
+          class="flex-1 border border-gray-300 rounded px-3 py-2"
+          placeholder="Add a new task..."
+          required
+        />
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+
+    <!-- รายการ Todo -->
+    <ul id="todo-list" class="flex-1 overflow-y-auto p-4 space-y-2">
+      <!-- รายการ Todo จะถูกแทรกที่นี่ -->
+    </ul>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
